@@ -196,12 +196,12 @@ function init_ui() {
     pomodoro_settings.appendChild(btn_reset)
     btn_reset.textContent = 'factory reset'
     btn_reset.addEventListener('click', _ => {
-        if(confirm('Are you sure you want to do a factory reset of the pomodoro timer (all customization will be lost)?')) {
-            if(confirm('Are you really really sure you want to do a factory reset of the pomodoro timer (all customization will be lost)?')) {
+        // if(confirm('Are you sure you want to do a factory reset of the pomodoro timer (all customization will be lost)?')) {
+        //     if(confirm('Are you really really sure you want to do a factory reset of the pomodoro timer (all customization will be lost)?')) {
                 localStorage.removeItem('pomodoro-state')
                 location.reload()
-            }
-        }
+        //     }
+        // }
     })
     
 
@@ -341,7 +341,8 @@ function add_session_config(options) {
     btn_delete.innerHTML = '&#x1F5D9;'
     btn_delete.classList.toggle('btn-delete', true)
     btn_delete.addEventListener('click', e => {
-        if(confirm('Are you sure you want to delete this session?')) remove_session_entry(session)
+        // if(confirm('Are you sure you want to delete this session?')) 
+        remove_session_entry(session)
     })
 
     const input_name = document.createElement('input')
