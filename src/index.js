@@ -530,10 +530,11 @@ function schedule_session(session, times = 1, auto = false) {
         schedule_times.min = 1
         
         const btn_delete = document.createElement('button')
-        btn_delete.innerHTML = '&#x1F5D9;'
+        btn_delete.innerHTML = 'X'
         btn_delete.classList.toggle('btn-delete', true)
         btn_delete.addEventListener('click', e => {
-            if(confirm('Are you sure you want to delete this scheduled session?')) remove_scheduled_entry(schedule)
+           // if(confirm('Are you sure you want to delete this scheduled session?'))
+            remove_scheduled_entry(schedule)
         })
         
         const schedule = {
