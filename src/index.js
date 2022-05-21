@@ -259,8 +259,8 @@ async function init_state() {
             name: 'pomodoro',
             timing: {
                 hours: 0,
-                minutes: 0,
-                seconds: 3
+                minutes: 25,
+                seconds: 0
             },
             sfx: default_alarm,
             theme: {
@@ -273,8 +273,8 @@ async function init_state() {
             name: 'short break',
             timing: {
                 hours: 0,
-                minutes: 0,
-                seconds: 3
+                minutes: 5,
+                seconds: 0
             },
             sfx: default_alarm,
             theme: {
@@ -287,8 +287,8 @@ async function init_state() {
             name: 'long break ',
             timing: {
                 hours: 0,
-                minutes: 0,
-                seconds: 3
+                minutes: 15,
+                seconds: 0
             },
             sfx: default_alarm,
             theme: {
@@ -458,6 +458,9 @@ function add_session_config(options) {
 }
 
 function init_listeners() {
+    document.addEventListener('contextmenu', e => {
+        pomodoro_settings.classList.toggle('hide')
+    })
     document.addEventListener('keyup', e => {
         if(e.key == 'Escape') pomodoro_settings.classList.toggle('hide')
     })
